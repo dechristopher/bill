@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "xo && nodeunit",
+    "start": "node index.js",
     "dev": "node index.js dev"
   },
   "repository": {
@@ -26,6 +27,7 @@
     "git-last-commit": "^0.2.0",
     "hashmap": "^2.0.5",
     "node-datetime": "^1.0.0",
+    "node-ipc": "^8.10.3",
     "nodeunit": "^0.10.2",
     "requestify": "^0.1.17"
   },
@@ -41,11 +43,17 @@
           "newIsCap": false,
           "capIsNew": false
         }
-        ],
-        "max-nested-callbacks": ["warn", 6],
-          "max-params": ["warn", {
-              "max": 6
-          }]
+      ],
+      "max-nested-callbacks": [
+        "warn",
+        6
+      ],
+      "max-params": [
+        "warn",
+        {
+          "max": 6
+        }
+      ]
     }
   }
 }
