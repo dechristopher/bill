@@ -1,0 +1,51 @@
+{
+  "name": "bill",
+  "version": "1.0.0",
+  "description": "The stellar caching and CD backplane for the talon backend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && nodeunit",
+    "dev": "node index.js dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dechristopher/bill.git"
+  },
+  "author": "Andrew DeChristopher <drew@kiir.us>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dechristopher/bill/issues"
+  },
+  "homepage": "https://github.com/dechristopher/bill#readme",
+  "dependencies": {
+    "arraylist": "^0.1.0",
+    "chalk": "^1.1.3",
+    "cron": "^1.1.0",
+    "datadog-metrics": "^0.3.0",
+    "dotenv": "^2.0.0",
+    "git-last-commit": "^0.2.0",
+    "hashmap": "^2.0.5",
+    "node-datetime": "^1.0.0",
+    "nodeunit": "^0.10.2",
+    "requestify": "^0.1.17"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.2",
+    "xo": "^0.17.1"
+  },
+  "xo": {
+    "rules": {
+      "new-cap": [
+        "error",
+        {
+          "newIsCap": false,
+          "capIsNew": false
+        }
+        ],
+        "max-nested-callbacks": ["warn", 6],
+          "max-params": ["warn", {
+              "max": 6
+          }]
+    }
+  }
+}
