@@ -11,7 +11,6 @@ const cfg = require('modules/cfg');
 let d = require('modules/data');
 
 let persist = false;
-let storedData;
 
 ipc.config.id = 'world';
 ipc.config.retry = 1500;
@@ -22,11 +21,11 @@ ipc.config.retry = 1500;
 
 ipc.serve(function () {
 	ipc.server.on('checkData', function (data, socket) {
-		if (storedData !== undefined) {
+		if (persist) {
 			ipc.server.emit(
 				socket,
 				'data',
-				storedData
+				d
 			);
 			persist = true;
 			console.log('bill sent data: [' + storedData + '] to ' + socket);
@@ -41,9 +40,9 @@ ipc.serve(function () {
 	});
 
 	ipc.server.on('setData', function (data, socket) {
-		storedData = data;
+		d = data;
 		persist = true;
-		console.log('bill got data [' + data + '] from ' + socket);
+		console.log('bill got data [' + d + '] from ' + socket);
 	});
 
 	ipc.server.on('socket.disconnected', function (socket, destroyedSocketID) {
