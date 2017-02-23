@@ -11,7 +11,6 @@ const cfg = require('modules/cfg');
 let d = require('modules/data');
 
 let persist = false;
-let storedData;
 
 ipc.config.id = 'world';
 ipc.config.retry = 1500;
