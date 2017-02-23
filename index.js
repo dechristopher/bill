@@ -7,8 +7,8 @@ const ipc = require('node-ipc');
 const cron = require('cron');
 
 // custom libraries
-const cfg = require('modules/cfg');
-let d = require('modules/data');
+let cfg = require('./modules/cfg');
+let d = require('./modules/data');
 
 let persist = false;
 
