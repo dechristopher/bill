@@ -4,10 +4,12 @@ Created by Andrew DeChristopher <drew@kiir.us> on 2/17/2017.
 
 const ipc = require('node-ipc');
 const cron = require('cron');
+const rstr = require('randomstring');
 
-ipc.config.id = 'hello';
+ipc.config.id = rstr.generate(7);
 ipc.config.retry = 1500;
 
+let hasData = false;
 let storedData;
 
 if (process.argv.length > 2) {
@@ -31,7 +33,7 @@ ipc.connectTo('world', function () {
             '1'
         );
 
-		if(hasData) {
+		if (hasData) {
 			ipc.of.world.emit('setData', storedData);
 		}
 	});
