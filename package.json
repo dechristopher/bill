@@ -29,6 +29,7 @@
     "node-datetime": "^1.0.0",
     "node-ipc": "^8.10.3",
     "nodeunit": "^0.10.2",
+    "randomstring": "^1.1.5",
     "requestify": "^0.1.17"
   },
   "devDependencies": {
